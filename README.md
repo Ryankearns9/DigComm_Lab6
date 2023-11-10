@@ -44,3 +44,46 @@ Source (https://3roam.com/vpp-to-vrms-calculator/)
 | Alternate SNR          | N/A          | 1356           |
 | Alternate SNR (in db)  | N/A          | 62.6           |
 
+Note, we round to 3 sigfigs which results in some values appearing unchanged.
+
+The SNR is telling us how many times higher our signal voltage level is to our noise voltage level.
+
+#### Question 5
+The SNR in both instances is almost identical because the noise power is so insignificant compared to the signal power. At this amplitude, our signal's power makes the voltage from the noise essentially a rounding error.
+
+#### Question 6
+We expect that the SNR in dB will decrease by a relative amount to the amount described by the noise power. As such going from -20dB to -6dB should translate to a decrease of 14dB in our SNR. This should give us a value of about 48.6. Similarly, going to 0dB should give us a value of 42.6dB.
+
+#### Question 7
+As stated in Question 6 we expect the table to look as follows if we use 0dB or -6dB.
+
+| Measurement            | Vrms (-6dB)  | Vrms (0dB)     |
+| ----------             |:------------:| :------------: |
+| Signal Voltage         | 1.49         | 1.49           |
+| Noise Voltage          | 5.55e-3      | .011           |
+| Signal to Noise Ratio  | 270.9        | 135.5          |
+| SNR (in decibels)      | 48.6         | 42.6           |
+| Signal + Noise Voltage | 1.49         | 1.50           |
+| Alternate SNR          | 270.9        | 136.4          |
+| Alternate SNR (in db)  | 48.6         | 42.7           |
+
+Actual measurements for the 0dB case are listed below
+
+| Measurement            | Vpp          | Vrms           |
+| ----------             |:------------:| :------------: |
+| Signal Voltage         | 4.22         | 1.49           |
+| Noise Voltage          | 6.51e-3      | 2.40e-3        |
+| Signal to Noise Ratio  | N/A          | 647.8          |
+| SNR (in decibels)      | N/A          | 56.2           |
+| Signal + Noise Voltage | 4.75         | 1.68           |
+| Alternate SNR          | N/A          | 730.4          |
+| Alternate SNR (in db)  | N/A          | 57.3           |
+
+#### Question 8
+The trigger for the online TimLabs is not reliable enough to form an eye diagram. However, we know from class that noise will significantly degrade the eye.
+
+#### Question 9
+As the frequency increases the spacing between the eyes decreases.
+
+## Bit Error Rates
+
