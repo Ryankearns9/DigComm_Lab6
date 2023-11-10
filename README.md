@@ -34,5 +34,13 @@ Without an RMS voltage measurement device, I was forced to use the Vpp for this 
 
 Source (https://3roam.com/vpp-to-vrms-calculator/)
 
-
+| Measurement            | Vpp          | Vrms           |
+| ----------             |:------------:| :------------: |
+| Signal Voltage         | 4.22         | 1.49           |
+| Noise Voltage          | 3.18e-3      | 1.10e-3        |
+| Signal to Noise Ratio  | N/A          | 1355           |
+| SNR (in decibels)      | N/A          | 62.6           |
+| Signal + Noise Voltage | N/A          | 1.49           |
+| Alternate SNR          | N/A          | 1356           |
+| Alternate SNR (in db)  | N/A          | 62.6           |
 
