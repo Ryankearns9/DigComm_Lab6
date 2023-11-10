@@ -1,7 +1,8 @@
 # Lab 6
 
 ## Introduction
-TODO
+Noise is an unvoidable part of the signal processing chain that must be accounted for. This lab explores the effects of that noise including how to measure it and how it affects our 
+signals. A large part of a communication engineer's job is how to reduce that noise and how to minimize the effects it has on our signal.
 
 ## Hardware
 1. Emona TIMS Online Freeware (https://www.emona-tims.com/emona-product/nettims-freewire/)
@@ -87,3 +88,17 @@ As the frequency increases the spacing between the eyes decreases.
 
 ## Bit Error Rates
 
+### LPF Measurements
+The below table is the measurements for the LPF characterization
+| Freq(Hz)   | Input Voltage  (Vpp) | LPF Voltage (Vpp)    | Gain (dB)      |
+| ---------- |:------------: | :------------: | :------------: |
+| 10         | 4.00          |   3.52         | -1.11          |
+| 50         | 4.00          |   3.52         | -1.11          |
+| 100        | 4.00          |   3.52         | -1.11          |
+| 500        | 3.99          |   3.46         | -1.24          |
+| 1000       | 3.98          |   3.28         | -1.68          |
+| 1500       | 3.95          |   2.90         | -2.68          |
+| 2000       | 3.78          |   1.99         | -5.57          |
+| 2500       | 3.86          |   1.07         | -11.14         |
+| 3000       | 3.81          |   0.50         | -17.64         |
+| 3500       | 3.73          |   0.24         | -23.83         |
