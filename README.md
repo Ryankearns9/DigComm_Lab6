@@ -88,7 +88,7 @@ As the frequency increases the spacing between the eyes decreases.
 
 ## Bit Error Rates
 
-### LPF Measurements
+### LPF Response
 The below table is the measurements for the LPF characterization
 | Freq(Hz)   | Input Voltage  (Vpp) | LPF Voltage (Vpp)    | Gain (dB)      |
 | ---------- |:------------: | :------------: | :------------: |
@@ -102,3 +102,76 @@ The below table is the measurements for the LPF characterization
 | 2500       | 3.86          |   1.07         | -11.14         |
 | 3000       | 3.81          |   0.50         | -17.64         |
 | 3500       | 3.73          |   0.24         | -23.83         |
+
+
+The filter Response can be seen here
+![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/BER/LPF_Char/Plot.PNG)
+
+### Questions
+
+#### Question 1
+Typically, the 3dB attenuation point is the cutoff frequency for a filter. Therefore, this filter's cutoff frequency can be defined at around 1.6-1.7kHz
+
+#### Question 2
+The Pattern can be found below. This shows a 31 bit pattern lasting 14.89ms.
+
+![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/BER/pattern_length.PNG)
+
+The lab manual states that the actual bit period length is 15.5ms
+
+#### Question 3
+The average is not exactly 0 because there is an odd number of bits (31). This inherently means there will be more of either 1's or 0's. In this case, we can count our bits and see 15 1's and 17 0's resulting in a non-zero voltage.
+
+#### SNR Measurement for 3.5 kHz
+| NRZ Voltage   | Noise Voltage | SNR (dB)   |
+| ---------- |:------------: | :------------: |
+| 1.97         | 1.87          |   0.423         | 
+
+#### Question 4
+The reason for the distortion can be seen below in our FFT plot. The signal's side lobes are filtered out resulting in a disruption to our expected sinc function.
+
+![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/BER/Question4.PNG)
+
+
+#### Question 5
+We expect the attenuation to exceed 3dB at 1.6kHz. This is because of the work we did previously to tune our LPF. Indeed, this is almost exactly 3dB
+
+![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/BER/3dB_Point.PNG)
+
+| Ch A Gain   | Ch B Gain | SNR (dB)   |
+| ---------- |:------------: | :------------: |
+| -13.6         | -16.8          |   3.2         | 
+
+#### Question 6
+There are still errors at this point because our filtering is causing significant issues for our amplitudes
+
+#### Question 7
+The sample counter is giving roughly the same error every time because it is about a 50% error rate. The error counter is counting for a fixed period of time and outputting roughly 50% error.
+
+#### Question 8
+This is creating no errors because we are resetting the sequence generator every time there would be an error. This ultimately results in a synchronized system
+
+#### Question 9
+This process of aligning the sequences is known as a phased locked loop. It corrects the phase until the two sequences are aligned
+
+#### Signal Table
+
+| Vrms   | Noise (Vrms) | SNR (dB) |Average Errors    | Error Rate      |
+| ---------- |:------------: | :------------: | :------------: | :------------: |
+| .58        | .461          | 2.00 | 366          | 43.9e-3         |
+| .58         | .245          | 7.50 | 318         | 38.2e-3          |
+| .58        | .172          |  10.55 |5         | 6.00e-4          |
+
+#### Signal Table New Eye
+| Vrms   | Noise (Vrms) | SNR (dB) |Average Errors    | Error Rate      |
+| ---------- |:------------: | :------------: | :------------: | :------------: |
+| .58        | .321          | 5.14 | 336          | 40.3e-3         |
+| .58         | .114          | 14.13 | 136         | 16.3e-3          |
+| .58        | .051          |  21.1 |8         | 9.6e-4          |
+'
+
+#### Question 10
+As can be seen from the graphs, we need a much better SNR for a good bit error rate if our decision point is not aligned with the eye.
+
+#### Question 11
+This occured because the center of the eye is the optimal location to take the measurements. We are at the edge of a bit when taking at a location off from the eye. The bit amplitude is falling as a result of our LPF. This combined with the noise results in a much worse bit error rate
