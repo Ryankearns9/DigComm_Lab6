@@ -11,4 +11,4 @@ TODO
 The below questions are posed by the Emona Instruments labs. Answer correspond to the related question.
 
 #### Question 1
-![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/Part1.PNG)
+![Image](https://github.com/Ryankearns9/DigComm_Lab6/blob/main/imgs/SNR_Eye/Part1.png)
